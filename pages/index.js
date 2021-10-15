@@ -48,13 +48,20 @@ export default function Home() {
           name="message"
           required
         />
-        <button className="border-2 bg-yellow-600 p-4" type="submit">
-          Submit
+        <button className="border-2 bg-yellow-600 p-4 rounded-lg" type="submit">
+          Send
         </button>
       </form>
-      <div className="text-center">
+      <div className="flex flex-col justify-center items-center">
         {messages.map((message, index) => {
-          return <p key={index}>{message.content}</p>;
+          return (
+            <p
+              className="border-2 rounded-full p-1 m-1 bg-gray-100"
+              key={index}
+            >
+              {message.content}
+            </p>
+          );
         })}
       </div>
     </div>
