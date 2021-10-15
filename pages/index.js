@@ -13,9 +13,11 @@ export default function Home() {
   const onSendMessage = async (e) => {
     e.preventDefault();
     console.log(e.currentTarget.message.value);
+    let form = e.currentTarget;
     let { data, error } = await supabase
       .from("messages")
-      .insert([{ content: e.currentTarget.message.value }]);
+      .insert([{ content: form.message.value }]);
+    form.message.value = "";
   };
 
   const getMessages = async () => {
