@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Header from "../components/Header";
-import { supabase } from "../public/utils/supabaseClient";
+import { supabase } from "../components/utils/supabaseClient";
 
 export default function Home() {
   const [messages, setMessages] = useState([]);
